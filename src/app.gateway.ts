@@ -19,8 +19,6 @@ export class AppGateway
 
   @SubscribeMessage('msgToServer')
   handleMessage(client: Socket, payload: string): void {
-    console.log("payload backend : ",payload);
-    
     this.server.emit('msgToServer', payload, client.id);
   }
 
